@@ -5,8 +5,6 @@ def main():
     ...
 
 
-def apply_inline_formatting(text: str) -> str:
-    ...
 
 
 def convert_markdown(md_text: str) -> str:

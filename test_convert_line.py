@@ -1,4 +1,4 @@
-import pytest
+import sys, re, argparse
 from parser import convert_line
 
 def test_heading():
