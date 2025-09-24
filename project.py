@@ -1,11 +1,7 @@
 import sys, re, argparse
-
+from parser import convert_line
 
 def main():
-    ...
-
-
-def convert_line(line: str) -> str:
     ...
 
 
