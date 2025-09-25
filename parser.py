@@ -10,7 +10,7 @@ def convert_line(line: str) -> str:
     :rtype: str
     """
     # heading
-    if matches := re.match(r'^(#+)\s+(.*)', line):
+    if matches := re.search(r'^(#+)\s+(.*)', line):
         level = len(matches.group(1))
         text = matches.group(2)
         if level <= 6:
@@ -19,12 +19,12 @@ def convert_line(line: str) -> str:
             return f"<p>{text.strip()}</p>"
     
     # unordered list item
-    elif re.match(r'^(\*|-|\+)\s+', line):  
-        text = line[2:]
+    elif matches := re.match(r'[ \t]*(\*|-|\+)\s+(.*)', line):  
+        text = matches.group(2)
         return f"<li>{text.strip()}</li>"
     
     # ordered list item
-    elif re.match(r'^\d+\.\s+', line):  
+    elif re.match(r'[ \t]*\d+\.\s+', line):  
         text = line.split(maxsplit=1)[1]
         return f"<li>{text.strip()}</li>"
     
@@ -48,10 +48,10 @@ def convert_line(line: str) -> str:
     # table row
     elif re.search(r'^(?:\|\s*([^|]+)\s*)+\|?$',line):
         cells = [cell.strip() for cell in line.strip("|").split("|")]
-        rows = ""
+        tds = ""
         for cell in cells:
-            rows += f"<td>{cell}</td>\n"
-        return f"<tr>\n{rows}</tr>"
+            tds += f"<td>{cell}</td>\n"
+        return f"<tr>\n{tds}</tr>"
         
     # horizontal row
     elif line == "---":

@@ -9,11 +9,11 @@ def test_heading():
 def test_unordered_list():
     assert convert_line("- Item") == "<li>Item</li>"
     assert convert_line("* Another") == "<li>Another</li>"
-    assert convert_line("+ Plus") == "<li>Plus</li>"
+    assert convert_line("   + Plus") == "<li>Plus</li>"
 
 def test_ordered_list():
     assert convert_line("1. First") == "<li>First</li>"
-    assert convert_line("42. Meaning") == "<li>Meaning</li>"
+    assert convert_line("   42. Meaning") == "<li>Meaning</li>"
 
 def test_url():
     assert convert_line('[Google](https://google.com)') == '<a href="https://google.com">Google</a>'
