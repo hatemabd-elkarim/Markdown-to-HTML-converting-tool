@@ -11,11 +11,17 @@ def apply_inline_formatting(text: str) -> str:
     :return: formated html line
     :rtype: str
     """
+
+    # inline code: `code`
+    if re.search(r'`([^`]+)`',text):
+        text = re.sub(r'`([^`]+)`', lambda m: f'<code>{m.group(1)}</code>', text)
+        return text
+    
+    
     # temporarily replace escaped characters
     text = re.sub(r'(\\\*{1,3})', lambda m: 'ESCAPEDAST123' * (len(m.group(1)) - 1), text)
     text = re.sub(r'(\\_{1,3})', lambda m: 'ESCAPEDUND123' * (len(m.group(1)) - 1), text)
-
-
+    
     # bold and italic
     text = re.sub(r'(\*\*\*|___)(.*?)\1', lambda m: f"<strong><em>{m.group(2).strip()}</em></strong>", text)
 
@@ -35,11 +41,11 @@ def apply_inline_formatting(text: str) -> str:
                   (f' title="{m.group(3).strip()}"' if m.group(3) else '') +
                   f'>{m.group(1).strip()}</a>',
         text)
+    
 
     # restore escaped characters
     text = text.replace('ESCAPEDAST123', '*')
     text = text.replace('ESCAPEDUND123', '_')
-
 
     return text    
 

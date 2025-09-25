@@ -1,4 +1,5 @@
 import re
+import html as HTML
 from parser import convert_line
 
 html  = []
@@ -23,6 +24,7 @@ def convert_markdown(md_text: list[str]) -> list[str]:
     olist = []
 
     for i, line in enumerate(md_text):
+        line = escape_html(line)
         if re.search(r'^(?:\|\s*([^|]+)\s*)+\|?$',line):
             if i+1 < len(md_text) and re.search(r'^(?:\|\s*(-+)\s*)+\|?$',md_text[i+1]): # new table
                table = []
@@ -143,3 +145,6 @@ def count_indent(line: str) -> int:
     num_spaces = indent.count(" ")
 
     return (num_spaces // 4)
+
+def escape_html(text):
+    return HTML.escape(text)

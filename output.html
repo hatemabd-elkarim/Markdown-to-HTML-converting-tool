@@ -5,50 +5,46 @@
 <title>Converted Markdown</title>
 </head>
 <body>
-<img src="./talabat.jpg" alt="Image">
-<p>Project Describtion:</p>
-<p>Our Talabat-inspired Food Delivery System is a Java-based application designed to simulate real-world food delivery operations with three main user roles: Admin, Seller, and Customer. The system focuses on providing a seamless experience for managing orders, products, and user interactions, with a strong emphasis on OOP principles, GUI design, and file handling.</p>
+<h1>Markdown to HTML Converter</h1>
 <p></p>
-<p>🔹 Admin Role:</p>
+<h4>Video Demo:  &lt;<a href="https://youtu.be/7dU5XGLi1Ek">URL HERE</a>&gt;</h4>
+<h4>Description:</h4>
 <p></p>
-<p>Full control over User Management: Add, Edit, Remove, and Search users by any field.</p>
+<p>This project is a <strong>Markdown to HTML converter</strong> built in Python. It allows users to transform Markdown-formatted text into fully structured HTML pages with proper formatting. The tool supports:</p>
 <p></p>
-<p>Access to Detailed Reports:</p>
+<ul>
+<li>**Headings**: All levels of Markdown headings (<code>#</code>, <code>##</code>, <code>###</code>, etc.) are converted to corresponding HTML <code>&lt;h1&gt;</code>–<code>&lt;h6&gt;</code> tags.</li>
+<li>**Paragraphs**: Consecutive lines of text are wrapped in <code>&lt;p&gt;</code> tags for proper HTML paragraph formatting and automatic word wrapping.</li>
+<li>**Lists**: Both **unordered (<code>-</code>, <code>*</code>, <code>+</code>)** and **ordered (<code>1.</code>, <code>2.</code>)** lists are supported, including **nested lists** of any depth.</li>
+<li>**Tables**: Markdown tables are parsed and converted into HTML <code>&lt;table&gt;</code> elements, with proper <code>&lt;th&gt;</code> and <code>&lt;td&gt;</code> cells.</li>
+<li>**Links and Images**: Markdown links <code>[text](url)</code> are converted into <code>&lt;a&gt;</code> tags, and images <code>![alt](url)</code> are rendered as <code>&lt;img&gt;</code> elements.</li>
+<li><strong>Inline formatting</strong>: Supports bold, italic, strikethrough, and inline code using Markdown syntax.</li>
+</ul>
 <p></p>
-<p>Number of Orders per Seller along with complete order details.</p>
+<p>The program can read any Markdown file, parse its contents, and generate an HTML file with all the formatting applied. This makes it ideal for:</p>
 <p></p>
-<p>Identification of the Seller with the maximum number of orders and the one with the highest revenue.</p>
+<ul>
+<li>Quickly converting documentation or notes to HTML.</li>
+<li>Building static web pages from Markdown content.</li>
+<li>Learning how Markdown parsing and HTML generation works in Python.</li>
+</ul>
 <p></p>
-<p>Number of Orders per Customer and their details.</p>
+<p><strong>Key Features</strong>:</p>
 <p></p>
-<p>Identification of the Customer with the maximum number of orders and the one with the highest revenue.</p>
+<ul>
+<li>Handles nested structures like lists and tables.</li>
+<li>Supports images with optional titles.</li>
+<li>Generates valid HTML5 output with <code>&lt;html&gt;</code>, <code>&lt;head&gt;</code>, and <code>&lt;body&gt;</code> tags.</li>
+<li>Easily extendable for additional Markdown features.</li>
+</ul>
 <p></p>
-<p>Ability to view and analyze order details and calculate average and total revenue over specified timeframes.</p>
+<p><strong>Usage</strong>:</p>
 <p></p>
-<p>🔹 Seller Role:</p>
+<p>```bash</p>
+<p>python project.py --file example.md</p>
+<p>```</p>
 <p></p>
-<p>Complete Product Management capabilities: Add, Edit, Remove, and Search products by any field.</p>
+<p>The output will be saved as <code>output.html</code> in the same directory.</p>
 <p></p>
-<p>Access to Product Reports:</p>
-<p></p>
-<p>Number of pieces sold over a specific period.</p>
-<p></p>
-<p>Best-selling and highest revenue-generating products.</p>
-<p></p>
-<p>Management of Order Status, enabling Sellers to mark orders as 'shipped' once ready.</p>
-<p></p>
-<p>Analysis of Average and Total Revenue for specific time periods.</p>
-<p></p>
-<p>🔹 Customer Role:</p>
-<p></p>
-<p>Smooth Cart Management:</p>
-<p></p>
-<p>Create a cart, search for products, add or remove items, and provide delivery addresses.</p>
-<p></p>
-<p>Review payment information and confirm or cancel orders easily.</p>
-<p></p>
-<p>Access to their Order History:</p>
-<p></p>
-<p>View order details, track shipping status, and rate the experience after completion.</p>
 </body>
 </html>
