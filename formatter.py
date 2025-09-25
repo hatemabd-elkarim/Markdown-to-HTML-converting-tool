@@ -13,11 +13,10 @@ def apply_inline_formatting(text: str) -> str:
     """
 
     # inline code: `code`
-    if re.search(r'`([^`]+)`',text):
-        text = re.sub(r'`([^`]+)`', lambda m: f'<code>{m.group(1)}</code>', text)
-        return text
+    text = re.sub(r'`([^`]+)`', lambda m: f'<code>{m.group(1)}</code>', text)
+  
     
-    
+
     # temporarily replace escaped characters
     text = re.sub(r'(\\\*{1,3})', lambda m: 'ESCAPEDAST123' * (len(m.group(1)) - 1), text)
     text = re.sub(r'(\\_{1,3})', lambda m: 'ESCAPEDUND123' * (len(m.group(1)) - 1), text)
