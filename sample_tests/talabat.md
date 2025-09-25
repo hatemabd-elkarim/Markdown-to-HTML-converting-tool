@@ -1,4 +1,4 @@
-![Image](./talabat.jpg)
+![Image](./sample_tests/talabat.jpg)
 Project Describtion:
 Our Talabat-inspired Food Delivery System is a Java-based application designed to simulate real-world food delivery operations with three main user roles: Admin, Seller, and Customer. The system focuses on providing a seamless experience for managing orders, products, and user interactions, with a strong emphasis on OOP principles, GUI design, and file handling.
 

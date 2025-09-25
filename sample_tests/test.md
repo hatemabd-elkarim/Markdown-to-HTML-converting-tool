@@ -13,7 +13,7 @@ This is a paragraph with some text. Here is a [link to Google](https://www.googl
 
 ## Heading 2
 
-Here is an image: ![Sample Image](./download.jpeg)
+Here is an image: ![Sample Image](./sample_tests/download.jpeg)
 
 | Name | Age |
 |------|-----|
