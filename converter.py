@@ -1,6 +1,5 @@
-import sys, re, argparse
+import re
 from parser import convert_line
-from formatter import apply_inline_formatting
 
 html  = []
 table = []

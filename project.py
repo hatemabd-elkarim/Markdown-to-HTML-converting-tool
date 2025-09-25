@@ -1,12 +1,22 @@
-import sys, re, argparse
-from parser import convert_line
+import sys, argparse
 from formatter import apply_inline_formatting
 from converter import convert_markdown
 
 def main():
+    """
+    :title  :Markdown to html converting tool
+    :author :Hatem Ayman
+    :github :hatemabd-elkarim
+    :edx    :hatemabd-elkarim
+    :country:Egypt
+    :date   :Thur 25 Sept 2025
+    """
     parser =  argparse.ArgumentParser(description="Convert a markdown file to an html file")
     parser.add_argument("--file", help=".md file")
     args = parser.parse_args()
+
+    if not args.file or not args.file.endswith(".md"):
+        sys.exit("[usage: python project.py --file file.md]")
 
     md = []
     try:

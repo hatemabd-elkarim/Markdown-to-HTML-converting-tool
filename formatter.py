@@ -1,4 +1,4 @@
-import sys, re, argparse
+import re
 
 
 def apply_inline_formatting(text: str) -> str:
