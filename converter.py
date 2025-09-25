@@ -60,7 +60,7 @@ def convert_markdown(md_text: list[str]) -> list[str]:
 # helper functions
 def handle_table():
     global table
-    html.append("<table>")
+    html.append('<table border="1">')
 
     # header row
     metadata = [cell.strip() for cell in table[0].strip("|").split("|")]
@@ -144,25 +144,3 @@ def count_indent(line: str) -> int:
     num_spaces = indent.count(" ")
 
     return (num_spaces // 4)
-
-
-
-h = convert_markdown([
-        "# Heading 1",
-        "This is a paragraph.",
-        "- Item A",
-        "    - Item B",
-        "1. First",
-        "    1. a",
-        "2. second",
-        "    2. b",
-        "## Heading 2",
-        "",
-        "| Name | Age |",
-        "|------|-----|",
-        "| Alice | 25 |",
-        "| Bob   | 30 |"
-    ])
-for line in h:
-    print(line)
-

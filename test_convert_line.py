@@ -15,10 +15,6 @@ def test_ordered_list():
     assert convert_line("1. First") == "<li>First</li>"
     assert convert_line("   42. Meaning") == "<li>Meaning</li>"
 
-def test_url():
-    assert convert_line('[Google](https://google.com)') == '<a href="https://google.com">Google</a>'
-    assert convert_line('[OpenAI](https://openai.com "AI Research")') == '<a href="https://openai.com" title="AI Research">OpenAI</a>'
-
 def test_image():
     assert convert_line('![Alt](img.png)') == '<img src="img.png" alt="Alt">'
     assert convert_line('![Alt](img.png "Caption")') == '<img src="img.png" alt="Alt" title="Caption">'

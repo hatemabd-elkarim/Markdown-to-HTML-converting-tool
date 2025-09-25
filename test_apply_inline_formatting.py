@@ -27,3 +27,7 @@ def test_apply_inline_formatting():
     text = r"This is ***bold+italic***, **bold**, *italic*, ~~strike~~, and \*not italic\*."
     expected = "This is <strong><em>bold+italic</em></strong>, <strong>bold</strong>, <em>italic</em>, <del>strike</del>, and *not italic*."
     assert apply_inline_formatting(text) == expected
+
+    # links
+    assert apply_inline_formatting('[Google](https://google.com)') == '<a href="https://google.com">Google</a>'
+    assert apply_inline_formatting('[OpenAI](https://openai.com "AI Research")') == '<a href="https://openai.com" title="AI Research">OpenAI</a>'

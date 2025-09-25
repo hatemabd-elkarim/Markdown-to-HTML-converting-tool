@@ -28,6 +28,14 @@ def apply_inline_formatting(text: str) -> str:
     # strikthrough
     text = re.sub(r'~~(.*?)~~', lambda m: f"<del>{m.group(1).strip()}</del>", text)
 
+    # links
+    text = re.sub(
+        r'\[(.+?)\]\((\S+)(?:\s+"(.+)")?\)',
+        lambda m: f'<a href="{m.group(2).strip()}"' +
+                  (f' title="{m.group(3).strip()}"' if m.group(3) else '') +
+                  f'>{m.group(1).strip()}</a>',
+        text)
+
     # restore escaped characters
     text = text.replace('ESCAPEDAST123', '*')
     text = text.replace('ESCAPEDUND123', '_')

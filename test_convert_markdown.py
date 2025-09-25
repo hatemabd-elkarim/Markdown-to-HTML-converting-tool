@@ -56,7 +56,7 @@ def test_convert_markdown_complex_nested_lists_with_table():
         "</ol>",
         "</ol>",
         "<h2>Heading 2</h2>",
-        "<table>",
+        '<table border="1">',
         "<tr>\n<th>Name</th>\n<th>Age</th>\n</tr>",
         "<tr>\n<td>Alice</td>\n<td>25</td>\n</tr>",
         "<tr>\n<td>Bob</td>\n<td>30</td>\n</tr>",
